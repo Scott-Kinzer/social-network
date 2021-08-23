@@ -1,0 +1,21 @@
+.nav {
+    grid-area: navigation;
+    background: rgba(245, 222, 179, 0.67);
+    height: 600px;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    /*align-items: center;*/
+}
+
+.nav div {
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.nav div a{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}

@@ -1,0 +1,18 @@
+.header {
+    grid-area: helmet;
+    /*background: darksalmon;*/
+    /*width: 1140px;*/
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    margin-right: 10px;
+    background: rgba(245, 222, 179, 0.67);
+    display: flex;
+    align-items: center;
+}
+
+.header .logo {
+    width: 48px;
+    height: 48px;
+    margin-left: 20px;
+
+}
