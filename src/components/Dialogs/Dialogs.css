@@ -1,0 +1,36 @@
+.content {
+    grid-area: Mcontent;
+    background: rgba(240, 248, 255, 0.85);
+    margin-right: 10px;
+    min-height: 700px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.content-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.list-of-people {
+    width: 20%;
+    background: #8d8dde;
+    height: 90%;
+    border-radius: 10px;
+}
+
+.my-dialog {
+    margin-left: 100px;
+}
+
+.list-name  li{
+    margin-top: 50px;
+    font-size: 22px;
+}
+
+.answer-photo img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+}
