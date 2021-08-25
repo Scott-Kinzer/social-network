@@ -1,6 +1,14 @@
 import React from "react";
 import "./Dialogs.css";
 import photo from "../../img/nature.jpg"
+import {NavLink} from "react-router-dom";
+
+const DialogItem = (props) => {
+    return (
+        <li><NavLink to={`/dialog/${props.id}`}>{props.name}</NavLink></li>
+    )
+}
+
 const Dialogs = () => {
     return (
         <div className="content">
@@ -8,11 +16,12 @@ const Dialogs = () => {
                 <div className="list-of-people">
                     <h3>Dialogs</h3>
                     <ul className="list-name">
-                        <li>Bob</li>
-                        <li>Jane</li>
-                        <li>Kate</li>
-                        <li>Lindgard</li>
-                        <li>Sisun</li>
+                        <DialogItem id="1" name="Bob"/>
+                        <DialogItem id="2" name="Kate"/>
+                        <DialogItem id="3" name="Andy"/>
+                        <DialogItem id="4" name="Hi"/>
+                        <DialogItem id="5" name="One"/>
+
                     </ul>
                 </div>
                 <div className="my-dialog">
