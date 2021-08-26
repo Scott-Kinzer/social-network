@@ -2,11 +2,14 @@ import React from "react";
 import './MyPosts.css';
 import MyPost from "./MyPost/MyPost";
 
-const MyPosts = () => {
+const MyPosts = (props) => {
     return (
             <div className="messages">
-                <MyPost message="Hey, why nobody love me?"/>
-                <MyPost message="Hey, why nobody love me?!"/>
+                {props.posts.map(item => {
+                    return (
+                        <MyPost message={item.message}/>
+                    )
+                })}
             </div>
 
     )
