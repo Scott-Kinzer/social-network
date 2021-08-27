@@ -1,4 +1,3 @@
-
 import './App.css';
 import Header from "./components/Header/Header";
 import Navbar from "./components/Navbar/Navbar";
@@ -12,8 +11,8 @@ function App(props) {
         <BrowserRouter>
         <Header/>
         <Navbar/>
-            <Route  path="/dialog" render={() => <Dialogs dataDialog={props.dataDialog} dataMes={props.dataMes} />}/>
-            <Route exact path="/" render={() => <Profile posts={props.posts}/>}/>
+            <Route  path="/dialog" render={() => <Dialogs dataDialog={props.state.messagePage.DialogData} dataMes={props.state.messagePage.MessageData} />}/>
+            <Route exact path="/" render={() => <Profile addPost={props.addPost} posts={props.state.profilePage.posts}/>}/>
         </BrowserRouter>
     </div>
 

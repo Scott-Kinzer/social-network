@@ -13,7 +13,7 @@ const Dialogs = (props) => {
                     <h3>Dialogs</h3>
                     <ul className="list-name">
                         {props.dataDialog.map((item, i) => {
-                            return  <DialogItem id={item.id} name={item.name}/>
+                            return  <DialogItem id={item.id} name={item.name} photo={item.img}/>
                         })}
                     </ul>
                 </div>

@@ -1,0 +1,16 @@
+li img {
+    width: 64px;
+    height: 64px;
+    border-radius: 100%;
+}
+
+li {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+
+}
+
+li a {
+    margin-left: 10px;
+}
