@@ -7,7 +7,8 @@ let state = {
             {id: 2, message: "What's up?"},
             {id: 3, message: "What's up?"},
             {id: 4, message: "What's up?"},
-        ]
+        ],
+        text: " "
     },
 
     messagePage: {
@@ -50,7 +51,16 @@ export let addPost = (postMessage) => {
     }
 
     state.profilePage.posts.push(newPost);
-    renderEntireTree(state, addPost);
+    changeText("");
+    renderEntireTree(state, addPost, changeText);
 }
+
+export let changeText = (text) => {
+
+    state.profilePage.text = text;
+    renderEntireTree(state, addPost, changeText);
+}
+
+
 
 export default state;

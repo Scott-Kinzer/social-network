@@ -12,7 +12,7 @@ function App(props) {
         <Header/>
         <Navbar/>
             <Route  path="/dialog" render={() => <Dialogs dataDialog={props.state.messagePage.DialogData} dataMes={props.state.messagePage.MessageData} />}/>
-            <Route exact path="/" render={() => <Profile addPost={props.addPost} posts={props.state.profilePage.posts}/>}/>
+            <Route exact path="/" render={() => <Profile addPost={props.addPost} posts={props.state.profilePage.posts} text={props.state.profilePage.text} changeText={props.changeText}/>}/>
         </BrowserRouter>
     </div>
 

@@ -5,10 +5,10 @@ import App from './App';
 
 
 
-export let renderEntireTree = (state, callbackFunc) => {
+export let renderEntireTree = (state, callbackFunc , secondFunc) => {
     ReactDOM.render(
         <React.StrictMode>
-            <App  state={state}  addPost={callbackFunc}/>
+            <App  state={state}  addPost={callbackFunc} changeText={secondFunc}/>
         </React.StrictMode>,
         document.getElementById('root')
     );
