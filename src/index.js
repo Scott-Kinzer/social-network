@@ -1,22 +1,19 @@
 import './index.css';
-import store from "./redux/state";
-// import {addPost, changeText} from "./redux/state";
+import store from "./redux/redux-store";
 import App from "./App";
 import ReactDOM from 'react-dom';
 import React from "react";
+import {Provider} from "react-redux";
 
- let renderEntireTree = () => {
+
     ReactDOM.render(
-        <React.StrictMode>
-            <App  state={store.getState()}  addPost={store.addPost.bind(store)} changeText={store.changeText.bind(store)}/>
-        </React.StrictMode>,
+       <Provider store={store}>
+            <App />
+       </Provider>,
         document.getElementById('root')
     );
-}
 
-renderEntireTree()
 
-store.subscribe(renderEntireTree);
 
 
 

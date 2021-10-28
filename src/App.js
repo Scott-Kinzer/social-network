@@ -1,18 +1,25 @@
 import './App.css';
-import Header from "./components/Header/Header";
 import Navbar from "./components/Navbar/Navbar";
-import Profile from "./components/Profile/Profile";
-import Dialogs from "./components/Dialogs/Dialogs";
 import {BrowserRouter, Route} from "react-router-dom";
+import ProfileContainer from "./components/Profile/ProfileContainer";
+import DialogsContainer from "./components/Dialogs/Message/DialogsContainer";
+import UsersContainer from "./components/Users/UsersC";
+import WeatherContainer from "./components/Weather/Weather";
+import HeaderContainer from "./components/Header/Header";
 
-function App(props) {
+
+
+function App() {
   return (
     <div className="app-wrapper">
         <BrowserRouter>
-        <Header/>
+        <HeaderContainer/>
         <Navbar/>
-            <Route  path="/dialog" render={() => <Dialogs dataDialog={props.state.messagePage.DialogData} dataMes={props.state.messagePage.MessageData} />}/>
-            <Route exact path="/" render={() => <Profile addPost={props.addPost} posts={props.state.profilePage.posts} text={props.state.profilePage.text} changeText={props.changeText}/>}/>
+            <Route  path="/dialog" render={() => <DialogsContainer  />}/>
+            <Route  path="/profile/:userID?" render={() => <ProfileContainer />}/>
+            <Route exact path="/users" render={() => <UsersContainer />}/>
+            <Route exact path="/weather" render={() => <WeatherContainer />}/>
+
         </BrowserRouter>
     </div>
 

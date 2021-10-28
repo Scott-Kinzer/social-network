@@ -1,27 +1,27 @@
-import React, {Fragment} from "react";
-import nature from "../../../img/nature.jpg";
-import avatar from "../../../img/human.jpeg";
+import React from "react";
 
-const ProfileInfo = () => {
+const ProfileInfo = (props) => {
     return (
-        <Fragment>
+        <>
             <div className="image-wrapper">
-                <img src={nature} alt=""/>
+                {/*{props.pageInform.photos.small  ? <img src={props.pageInform.photos.small} alt=""/>: <img src={avatar} alt=""/>}*/}
             </div>
             <div className="inform-account">
                 <div className="avatar">
-                    <img src={avatar} alt=""/>
+                    {/*{props.pageInform.photos.small ? <img src={props.pageInform.photos.small} alt=""/>: <img src={avatar} alt=""/>}*/}
+
                 </div>
                 <div className="information">
                     <div className="name">
-                        Andrew Garfield
+                        {/*{props.pageInform.aboutMe}*/}
                     </div>
                     <div className="age">
-                        21 years old
+                        {props.pageInform.fullName}
+
                     </div>
                 </div>
             </div>
-        </Fragment>
+        </>
 
     )
 }

@@ -8,6 +8,7 @@
     background: rgba(245, 222, 179, 0.67);
     display: flex;
     align-items: center;
+    position: relative;
 }
 
 .header .logo {
@@ -15,4 +16,17 @@
     height: 48px;
     margin-left: 20px;
 
+}
+
+.login {
+    position: absolute;
+    right: 10px;
+    font-size: 20px;
+    top: 30px;
+    transform: translate(-50%, -50%);
+    color: black;
+}
+
+.cookieField {
+    margin: 0 auto;
 }

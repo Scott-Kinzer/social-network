@@ -1,3 +1,6 @@
+// import profileReducer from "./profile-reducers";
+// import dialogReducer from "./dialog-reducers.ts";
+
 
 let store = {
     _state : {
@@ -8,15 +11,18 @@ let store = {
                 {id: 3, message: "What's up?"},
                 {id: 4, message: "What's up?"},
             ],
-            text: " "
+            text: " ",
+            changeText (text)  {
+                this.text = text;
+            },
         },
 
         messagePage: {
             MessageData: [
-                {message: "Hello how are you?" },
-                {message: "Hello how are you?!!" },
-                {message: "Hello how are you?!" },
-                {message: "Hello how are you?!!!" },
+                {message: "Hello how are you?", id: 1},
+                {message: "Hello how are you?!!",id: 2},
+                {message: "Hello how are you?!", id: 3 },
+                {message: "Hello how are you?!!!", id: 4 },
             ],
             DialogData: [
                 {
@@ -39,34 +45,34 @@ let store = {
                     id: 4,
                     img: "space.jpg"
                 },
-            ]
+            ],
+            newMessageText: "",
+            changeTextTwo (text)  {
+                this.newMessageText= text;
+
+            }
         }
     },
     renderEntireTree () {
         console.log("State was changed");
     },
-    addPost(postMessage)  {
-        console.log(this._state.profilePage.posts);
-        let newPost = {
-            id: 5,
-            message: postMessage,
-        }
 
-        this._state.profilePage.posts.push(newPost);
-        this.changeText("");
-        this.renderEntireTree();
-    },
-    changeText (text)  {
-        this._state.profilePage.text = text;
-        this.renderEntireTree();
-    },
 
     subscribe (observer)  {
         this.renderEntireTree = observer;
     },
     getState() {
         return this._state;
+    },
+
+    dispatch(action) {
+        this._state.profilePage = profileReducer(this._state.profilePage, action)
+        this._state.messagePage = dialogReducer(this._state.messagePage, action)
+        this.renderEntireTree()
     }
 }
+
+
+
 
 export default store;
